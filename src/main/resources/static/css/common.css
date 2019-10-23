@@ -1,0 +1,43 @@
+
+@font-face {
+    font-family: 'MTCORSVA';
+    src: url('fonts/mtcorsva/MTCORSVA.eot');
+    src: local('fonts/mtcorsva/MTCORSVA'),
+    url('fonts/mtcorsva/MTCORSVA.woff') 	format('woff'),
+    url('fonts/mtcorsva/MTCORSVA.ttf') format('truetype');
+}
+
+body {
+    background-image: url(../image/mountains.jpg);
+    background-color: white;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    background-color: deepskyblue;
+    justify-content: space-between;
+}
+
+.header__logo-image {
+    align-self: center;
+    height: 70px;
+    width: 70px;
+}
+
+.header__title {
+    align-self: center;
+    text-decoration: none;
+    color: white;
+    font-family: "MTCORSVA";
+    font-size: 42px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.header__user-image {
+    align-self: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
