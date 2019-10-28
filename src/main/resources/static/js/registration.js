@@ -1,7 +1,5 @@
 "use strict";
 
-var registrationSubmitElement = document.querySelector(".registration-form__button-submit");
-
 var registrationFormElement = document.querySelector(".registration-form__content");
 
 var adviceUsername = document.querySelector(".registration-form__advice-username");
@@ -13,12 +11,17 @@ var inputPasswordElement = document.querySelector(".registration-form__input-pas
 var adviceRepeatPassword = document.querySelector(".registration-form__advice-repeat-password");
 var inputRepeatPasswordElement = document.querySelector(".registration-form__input-repeat-password");
 
+var isUsernameValid = false;
+var isPasswordValid = false;
+var isRepeatPasswordValid = false;
 
 function validateUsername() {
     if (inputUsernameElement.value.length < 4) {
         outputInvalidUsernameMessage();
+        isUsernameValid = false;
     } else {
         outputValidUsernameMessage();
+        isUsernameValid = true;
     }
 }
 
@@ -55,8 +58,10 @@ function limitPasswordLength(event) {
 function validatePassword() {
     if (inputPasswordElement.value.length < 6) {
         outputInvalidPasswordMessage();
+        isPasswordValid = false;
     } else {
         outputValidPasswordMessage();
+        isPasswordValid = true;
     }
 }
 
@@ -85,8 +90,10 @@ function limitRepeatPasswordLength(event) {
 function validateRepeatPassword() {
     if (inputPasswordElement.value !== inputRepeatPasswordElement.value) {
         outputInvalidRepeatPasswordMessage();
+        isRepeatPasswordValid = false;
     } else {
         outputValidRepeatPasswordMessage();
+        isRepeatPasswordValid = true;
     }
 }
 
@@ -104,6 +111,21 @@ function outputValidRepeatPasswordMessage() {
     inputRepeatPasswordElement.style.borderColor = "deepskyblue";
 }
 
+function validateForm(event) {
+    if (!isUsernameValid || !isPasswordValid || !isRepeatPasswordValid) {
+        event.preventDefault();
+    }
+    if (!isUsernameValid) {
+        validateUsername();
+    }
+    if (!isPasswordValid) {
+        validatePassword();
+    }
+    if (!isRepeatPasswordValid && inputPasswordElement.value.length > 0) {
+        validateRepeatPassword()
+    }
+}
+
 inputUsernameElement.addEventListener("input", validateUsername);
 inputUsernameElement.addEventListener("keydown", limitUsernameLength);
 
@@ -112,3 +134,5 @@ inputPasswordElement.addEventListener("keydown", limitPasswordLength);
 
 inputRepeatPasswordElement.addEventListener("keydown", limitRepeatPasswordLength);
 inputRepeatPasswordElement.addEventListener("input", validateRepeatPassword);
+
+registrationFormElement.addEventListener("submit", validateForm);
