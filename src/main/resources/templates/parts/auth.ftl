@@ -17,9 +17,11 @@
                id="input-password"
                class="login-form__input-password"/>
         <input type="submit" value="Войти" class="login-form__button-submit"/>
-        <a href="/login" class="login-form__link-registration">Зарегистрируйтесь</a>
+        <a href="/registration" class="login-form__link-registration">Зарегистрируйтесь</a>
     </form>
 </div>
+
+    <script src="js/auth.js"></script>
 </#macro>
 
 <#macro logout>

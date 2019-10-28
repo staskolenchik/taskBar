@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Verdana';
+    src: url('static/css/fonts/verdana/Verdana.eot');
+    src: local('Verdana'),
+    url('static/css/fonts/verdana/Verdana.eot?#iefix') format('embedded-opentype'),
+    url('static/css/fonts/verdana/Verdana.woff') format('woff'),
+    url('static/css/fonts/verdana/Verdana.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('static/css/fonts/verdana/Verdana-Bold.eot');
+    src: local('Verdana Bold'), local('Verdana-Bold'),
+    url('static/css/fonts/verdana/Verdana-Bold.eot?#iefix') format('embedded-opentype'),
+    url('static/css/fonts/verdana/Verdana-Bold.woff') format('woff'),
+    url('static/css/fonts/verdana/Verdana-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.registration-form {
+    display: flex;
+    height: 700px;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-form__content{
+    background-color: deepskyblue;
+    min-width: 350px;
+    width: 25%;
+    min-height: 400px;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.registration-form__title {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    margin: 5px;
+}
+
+.registration-form__label-username,
+.registration-form__label-password,
+.registration-form__label-repeat-password {
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 24px;
+    color: black;
+}
+
+.registration-form__input-username,
+.registration-form__input-password,
+.registration-form__input-repeat-password {
+    border: none;
+    width: 300px;
+    padding: 5px;
+
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 20px;
+    color: black;
+}
+
+.registration-form__button-submit {
+    width: 310px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    margin: 20px 0 5px 0;
+
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 22px;
+    color: black;
+}
+
+.registration-form__login-link {
+    margin: 0 0 20px 0;
+
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 12px;
+    color: darkblue;
+}
+
+.registration-form__notification-area {
+    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 200px;
+    width: 350px;
+    height: 200px;
+    border-radius: 25px;
+    margin: 3% auto;
+    left: 0;
+    right: 0;
+}
+
+.registration-form__notification-message {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+
+.registration-form__notification-submit {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    margin: 20px 0 5px 0;
+
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 22px;
+    color: black;
+}
+
