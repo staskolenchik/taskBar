@@ -9,8 +9,9 @@
         <label for="registration-username"
                class="registration-form__label-username"
         >
-            Введите логин*
+            Введите логин
         </label>
+        <p class="registration-form__advice-username">(Введите от 4 до 20 символов)*</p>
         <input id="registration-username"
                name="username"
                autofocus
@@ -21,8 +22,9 @@
         <label for="registration-password"
                class="registration-form__label-password"
         >
-            Введите пароль*
+            Введите пароль
         </label>
+        <p class="registration-form__advice-password">(Введите от 6 до 25 символов)*</p>
         <input id="registration-password"
                name="password"
                type="password"
@@ -32,15 +34,21 @@
         <label for="registration-repeat-password"
                class="registration-form__label-repeat-password"
         >
-            Повторите пароль*
+            Повторите пароль
         </label>
+        <p class="registration-form__advice-repeat-password">(Пароль должен совпадать)*</p>
         <input id="registration-repeat-password"
                type="password"
                placeholder="Повторите пароль"
                class="registration-form__input-repeat-password">
 
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <button type="submit" class="registration-form__button-submit">Зарегистрироваться</button>
+        <button type="submit"
+                class="registration-form__button-submit"
+        >
+            Зарегистрироваться
+        </button>
+
         <a href="/login" class="registration-form__login-link">Или ввойдите, если есть аккаунт</a>
     </form>
 

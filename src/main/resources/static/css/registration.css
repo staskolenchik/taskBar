@@ -31,7 +31,7 @@
     background-color: deepskyblue;
     min-width: 350px;
     width: 25%;
-    min-height: 400px;
+    min-height: 450px;
     height: 60%;
     display: flex;
     justify-content: space-around;
@@ -60,14 +60,26 @@
 .registration-form__input-username,
 .registration-form__input-password,
 .registration-form__input-repeat-password {
-    border: none;
+    border: solid;
+    border-color: deepskyblue;
     width: 300px;
     padding: 5px;
 
     font-family: Verdana;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
     color: black;
+}
+
+.registration-form__advice-username,
+.registration-form__advice-password,
+.registration-form__advice-repeat-password {
+    margin: 1px 0;
+
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 10px;
+    color: whitesmoke;
 }
 
 .registration-form__button-submit {
