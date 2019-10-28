@@ -26,6 +26,7 @@ function validateUsername() {
 }
 
 function limitUsernameLength(event) {
+    event = event || window.event;
     if (inputUsernameElement.value.length > 19 &&
         event.code !== 'Backspace' &&
         event.code !== 'Delete') {
@@ -34,14 +35,12 @@ function limitUsernameLength(event) {
 }
 
 function outputInvalidUsernameMessage() {
-    console.log("Вы ввели менее четыре символа");
     adviceUsername.innerText = "(Вы ввели менее четырех символов)*".toUpperCase();
     adviceUsername.style.color = "darkred";
     inputUsernameElement.style.borderColor = "red";
 }
 
 function outputValidUsernameMessage() {
-    console.log("Вы ввели 4 и более символа");
     adviceUsername.innerText = "(Введите от 4 до 20 символов)*";
     adviceUsername.style.color = "whitesmoke";
     inputUsernameElement.style.borderColor = "deepskyblue";
@@ -66,20 +65,19 @@ function validatePassword() {
 }
 
 function outputInvalidPasswordMessage() {
-    console.log("Вы ввели менее 6 символа");
     advicePassword.innerText = "(Вы ввели менее шести символов)*".toUpperCase();
     advicePassword.style.color = "darkred";
     inputPasswordElement.style.borderColor = "red";
 }
 
 function outputValidPasswordMessage() {
-    console.log("Вы ввели 4 и более символа");
     advicePassword.innerText = "(Введите от 4 до 25 символов)*";
     advicePassword.style.color = "whitesmoke";
     inputPasswordElement.style.borderColor = "deepskyblue";
 }
 
 function limitRepeatPasswordLength(event) {
+    event = event || window.event;
     if (inputRepeatPasswordElement.value.length > 24 &&
         event.code !== 'Backspace' &&
         event.code !== 'Delete') {
@@ -98,20 +96,19 @@ function validateRepeatPassword() {
 }
 
 function outputInvalidRepeatPasswordMessage() {
-    console.log("Пароли не совпадают");
     adviceRepeatPassword.innerText = "Пароли не совпадают!".toUpperCase();
     adviceRepeatPassword.style.color = "darkred";
     inputRepeatPasswordElement.style.borderColor = "red";
 }
 
 function outputValidRepeatPasswordMessage() {
-    console.log("Пароли совпадают");
     adviceRepeatPassword.innerText = "Пароль совпадает!".toUpperCase();
     adviceRepeatPassword.style.color = "greenyellow";
     inputRepeatPasswordElement.style.borderColor = "deepskyblue";
 }
 
 function validateForm(event) {
+    event = event || window.event;
     if (!isUsernameValid || !isPasswordValid || !isRepeatPasswordValid) {
         event.preventDefault();
     }

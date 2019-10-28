@@ -1,26 +1,23 @@
 "use strict";
 
 var popupArea = document.querySelector(".registration-form__notification-area");
-var popupText = document.querySelector(".registration-form__notification-message");
 var popupSubmitButton = document.querySelector(".registration-form__notification-submit");
-
 
 popupSubmitButton.addEventListener("click", enableRegistrationForm);
 
 function preventRegistrationBySubmitButton(event) {
     event = event || window.event;
-    console.log("preventRegistrationBySubmitButton");
-    console.log(event);
     event.preventDefault();
     enableRegistrationForm();
 }
 
 registrationFormElement.addEventListener("submit", preventRegistrationBySubmitButton);
+registrationFormElement.removeEventListener("submit", validateForm);
 
 function enableRegistrationForm() {
-    console.log('enableRegistrationForm');
     showRegistrationForm();
     enableRegistrationSubmitEvent();
+    registrationFormElement.addEventListener("submit", validateForm);
 }
 
 function showRegistrationForm() {
@@ -28,6 +25,5 @@ function showRegistrationForm() {
 }
 
 function enableRegistrationSubmitEvent() {
-    console.log("enableRegistrationSubmitEvent");
     registrationFormElement.removeEventListener("submit", preventRegistrationBySubmitButton);
 }
