@@ -2,7 +2,7 @@ package com.geekbrains.controller;
 
 import com.geekbrains.domain.Role;
 import com.geekbrains.domain.User;
-import com.geekbrains.service.impl.UserServiceImpl;
+import com.geekbrains.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class RegistrationController {
     private static final String LOGIN_EXISTS_NOTIFICATION = "Логин уже существует!";
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
