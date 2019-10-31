@@ -3,7 +3,6 @@ package com.geekbrains.controller;
 import com.geekbrains.domain.Role;
 import com.geekbrains.domain.User;
 import com.geekbrains.service.UserService;
-import com.geekbrains.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -20,11 +19,10 @@ public class RegistrationController {
     private static final String REGISTRATION_MAPPING = "/registration";
     private static final String VIEW = "registration";
     private static final String REDIRECTION = "/login" ;
-    private static final String ATTRIBUTE = "message";
-    private static final String ERROR_MESSAGE = "User exists!";
+    private static final String LOGIN_EXISTS_NOTIFICATION = "Логин уже существует!";
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
@@ -42,7 +40,8 @@ public class RegistrationController {
 
         User userFromDB = userService.getByUsername(username);
         if (userFromDB != null) {
-            model.addAttribute(ATTRIBUTE, ERROR_MESSAGE);
+            model.addAttribute("isLoginExists", Boolean.TRUE);
+            model.addAttribute("loginExistsNotification", LOGIN_EXISTS_NOTIFICATION);
             result = REGISTRATION_MAPPING;
         } else {
             user.setUsername(username);

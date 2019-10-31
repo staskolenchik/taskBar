@@ -20,19 +20,19 @@
     font-style: normal;
 }
 
-.login-form {
+.registration-form {
     display: flex;
     height: 700px;
     align-items: center;
     justify-content: center;
 }
 
-.login-form__content{
+.registration-form__content{
     background-color: deepskyblue;
     min-width: 350px;
     width: 25%;
-    min-height: 300px;
-    height: 50%;
+    min-height: 450px;
+    height: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -40,7 +40,7 @@
     border-radius: 30px;
 }
 
-.login-form__title {
+.registration-form__title {
     font-family: Verdana;
     font-weight: bold;
     font-size: 28px;
@@ -48,17 +48,20 @@
     margin: 5px;
 }
 
-.login-form__label-username,
-.login-form__label-password {
+.registration-form__label-username,
+.registration-form__label-password,
+.registration-form__label-repeat-password {
     font-family: Verdana;
     font-weight: normal;
     font-size: 24px;
     color: black;
 }
 
-.login-form__input-username,
-.login-form__input-password {
-    border: none;
+.registration-form__input-username,
+.registration-form__input-password,
+.registration-form__input-repeat-password {
+    border: solid;
+    border-color: deepskyblue;
     width: 300px;
     padding: 5px;
 
@@ -68,7 +71,18 @@
     color: black;
 }
 
-.login-form__button-submit {
+.registration-form__advice-username,
+.registration-form__advice-password,
+.registration-form__advice-repeat-password {
+    margin: 1px 0;
+
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 10px;
+    color: whitesmoke;
+}
+
+.registration-form__button-submit {
     width: 310px;
     height: 50px;
     border-radius: 25px;
@@ -82,7 +96,7 @@
     color: black;
 }
 
-.login-form__link-registration {
+.registration-form__login-link {
     margin: 0 0 20px 0;
 
     font-family: Verdana;
@@ -90,3 +104,43 @@
     font-size: 12px;
     color: darkblue;
 }
+
+.registration-form__notification-area {
+    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 200px;
+    width: 350px;
+    height: 200px;
+    border-radius: 25px;
+    margin: 3% auto;
+    left: 0;
+    right: 0;
+}
+
+.registration-form__notification-message {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 22px;
+    color: white;
+}
+
+.registration-form__notification-submit {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    margin: 20px 0 5px 0;
+
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 22px;
+    color: black;
+}
+

@@ -26,6 +26,8 @@
         <a href="/registration" class="login-form__link-registration">Зарегистрируйтесь</a>
     </form>
 </div>
+
+    <script src="js/auth.js"></script>
 </#macro>
 
 <#macro logout>
