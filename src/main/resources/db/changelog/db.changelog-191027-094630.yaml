@@ -1,0 +1,45 @@
+databaseChangeLog:
+- changeSet:
+    id: 1572169618577-1
+    author: nairy71
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: user_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: projects_id
+            type: BIGINT
+        tableName: usr_projects
+- changeSet:
+    id: 1572169618577-2
+    author: nairy71
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: usr_projects
+        constraintName: FK36htw3s07u90gdwa5i8vofyyg
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: usr
+        validate: true
+- changeSet:
+    id: 1572169618577-3
+    author: nairy71
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: projects_id
+        baseTableName: usr_projects
+        constraintName: FKp5gd30q5b48khew9ncdmru7gq
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: project
+        validate: true
+

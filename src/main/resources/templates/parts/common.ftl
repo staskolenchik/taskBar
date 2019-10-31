@@ -7,6 +7,7 @@
     <title>TaskBar</title>
     <link rel='stylesheet' href='css/auth.css'>
     <link rel='stylesheet' href='css/common.css'>
+    <link rel='stylesheet' href='css/registration.css'>
 </head>
 <body>
     <header class="header">
@@ -21,7 +22,8 @@
 
     <#nested>
 
-    <script src="js/auth.js"></script>
+
+
 </body>
 </html>
 </#macro>

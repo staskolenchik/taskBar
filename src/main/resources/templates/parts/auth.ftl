@@ -2,6 +2,12 @@
 <div class="login-form">
     <form method="post" action="${path}" class="login-form__content">
         <h4 class="login-form__title">Вход</h4>
+        <#if RequestParameters.error??>
+            <div>Invalid username and password</div>
+        </#if>
+        <#if RequestParameters.logout??>
+            <div>You have been logged out</div>
+        </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <label for="input-username" class="login-form__label-username">Логин</label>
         <input autofocus
@@ -17,9 +23,11 @@
                id="input-password"
                class="login-form__input-password"/>
         <input type="submit" value="Войти" class="login-form__button-submit"/>
-        <a href="/login" class="login-form__link-registration">Зарегистрируйтесь</a>
+        <a href="/registration" class="login-form__link-registration">Зарегистрируйтесь</a>
     </form>
 </div>
+
+    <script src="js/auth.js"></script>
 </#macro>
 
 <#macro logout>

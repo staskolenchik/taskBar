@@ -1,5 +1,6 @@
 package com.geekbrains.service.impl;
 
+import com.geekbrains.domain.Project;
 import com.geekbrains.domain.User;
 import com.geekbrains.repo.UserRepository;
 import com.geekbrains.service.UserService;
@@ -8,6 +9,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<User, Long> implements UserService {
